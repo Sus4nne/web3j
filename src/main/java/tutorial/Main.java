@@ -3,12 +3,17 @@ package tutorial;
 import org.web3j.crypto.*;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
+import org.web3j.protocol.core.RemoteCall;
 import org.web3j.protocol.core.methods.response.*;
 import org.web3j.protocol.exceptions.TransactionException;
 import org.web3j.protocol.http.HttpService;
+import org.web3j.tx.TransactionManager;
 import org.web3j.tx.Transfer;
+import org.web3j.tx.gas.ContractGasProvider;
+import org.web3j.tx.gas.DefaultGasProvider;
 import org.web3j.utils.Convert;
 import org.web3j.utils.Numeric;
+import web3j.tutorial.DocumentRegistry;
 
 import java.io.File;
 import java.io.IOException;
@@ -68,9 +73,9 @@ public class Main {
 //            // Value to transfer (in wei)
 //            BigInteger value = Convert.toWei("1", Convert.Unit.ETHER).toBigInteger();
 //
-//            // Gas Parameters
-//            BigInteger gasLimit = BigInteger.valueOf(21000);
-//            BigInteger gasPrice = Convert.toWei("1", Convert.Unit.GWEI).toBigInteger();
+            // Gas Parameters
+            BigInteger gasLimit = BigInteger.valueOf(6721975);
+            BigInteger gasPrice = Convert.toWei("2", Convert.Unit.GWEI).toBigInteger();
 //
 //            // Prepare the rawTransaction
 //            RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(
@@ -103,6 +108,24 @@ public class Main {
             System.out.println("Transaction " + receipt.getTransactionHash() + " was mined in block # " + receipt.getBlockNumber());
             System.out.println("Balance: " + Convert.fromWei(web3.ethGetBalance(credentials.getAddress(), DefaultBlockParameterName.LATEST).send().getBalance().toString(), Convert.Unit.ETHER));
 
+            // Deploy of smart contract
+            Credentials creds = Credentials.create("8564426249a7ebf2394ac4d428020ddfdf14e885237e0f691abf8757f89e2524");
+//
+//            DocumentRegistry registryContract = DocumentRegistry.deploy(web3, creds, gasPrice, gasLimit).send();
+//
+//            String contractAddress = registryContract.getContractAddress();
+//            System.out.println(contractAddress);
+
+            // Wrapper instance for already deployed contract
+            DocumentRegistry registryContract = DocumentRegistry.load(credentials.getAddress(), web3, creds, new DefaultGasProvider());
+
+            System.out.println(registryContract);
+
+            TransactionReceipt receiptDoc = registryContract.notarizeDocument(
+                    "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco".getBytes()).send();
+
+            String txHash = receiptDoc.getTransactionHash();
+            System.out.println(txHash);
 
 
         } catch(IOException | InterruptedException | TransactionException ex) {
@@ -110,5 +133,7 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
 }
