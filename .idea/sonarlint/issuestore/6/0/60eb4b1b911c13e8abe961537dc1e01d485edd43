@@ -1,0 +1,39 @@
+
+e
+java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾þÿÿÿÿ8žú…Éª.
+U	java:S106h"9Replace this use of System.out or System.err by a logger.(•Ñí¦8‹É³Éª.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ÍÉú¥8ºÕúÇª.
+E
+java:S1148o"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8î–ÿÉª.
+W	java:S125E"<This block of commented-out lines of code should be removed.(øþ¹8Ð‹Êª.
+_
+java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8žž†Éª.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(× ¥Ž8à’Èª.
+Z	java:S106g"9Replace this use of System.out or System.err by a logger.(ñ÷š¿ýÿÿÿÿ8‹É³Éª.
+W	java:S125]"<This block of commented-out lines of code should be removed.(‚¶ä=8…ßŠÊª.
+X	java:S125Q"<This block of commented-out lines of code should be removed.(üØÁÊ8Ð‹Êª.
+X	java:S125H"<This block of commented-out lines of code should be removed.(‘çá¦8Ð‹Êª.
+]	java:S125T"<This block of commented-out lines of code should be removed.(î¤Ëìþÿÿÿÿ8Ð‹Êª.
+g	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(¡„õßúÿÿÿÿ8æ®¿Çª.
+]	java:S125c"<This block of commented-out lines of code should be removed.(¥æ‡Ûùÿÿÿÿ8…ßŠÊª.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(°®Âãüÿÿÿÿ8ÏžúÇª.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(ôÆÓÝ8à’Èª.
+X	java:S125,"<This block of commented-out lines of code should be removed.(ÆÑßç8¶É“Éª.
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¤¸÷ùÿÿÿÿ8æ®¿Çª.
+[
+java:S1854?"9Remove this useless assignment to local variable "nonce".(¯À”Ãùÿÿÿÿ8Ð‹Êª.
+]	java:S125X"<This block of commented-out lines of code should be removed.( ½¶øúÿÿÿÿ8Ð‹Êª.
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(Ë˜Ã8™¸ýÇª.
+h
+java:S2142l"FEither re-interrupt this method or rethrow the "InterruptedException".(‡ü«¤ûÿÿÿÿ8ºÊ˜Éª.
+Z	java:S106*"9Replace this use of System.out or System.err by a logger.(Ú§˜¯ÿÿÿÿÿ8™¸ýÇª.
+L
+java:S1481?"*Remove this unused "nonce" local variable.(¯À”Ãùÿÿÿÿ8Ð‹Êª.
+U	java:S106:"9Replace this use of System.out or System.err by a logger.(•Ñí¦8Ç¡Éª.
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(Ý–ìˆ8Ç¡Éª.
+o
+java:S1128"MRemove this unused import 'java.security.InvalidAlgorithmParameterException'.( ¾·þÿÿÿÿ8Çç…Éª.
+]	java:S125'"<This block of commented-out lines of code should be removed.(ª¼ðÐøÿÿÿÿ8·³“Éª.
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ð¥Å8Ï®ŠÉª.
