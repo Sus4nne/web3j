@@ -7,5 +7,3 @@ P
 	Web3j.iml,0/6/0646c5122b3b92ff7bea42e5d98ffe00b589f734
 _
 /src/main/java/tutorial/ContractGasProvider.java,4/0/40eaf5b8c9e893d08577725ca34257adcd392eec
-W
-'src/main/resources/DocumentRegistry.sol,0/2/02b10702f2db23096bf5f534b79a9f796e601c88

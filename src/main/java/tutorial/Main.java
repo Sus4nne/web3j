@@ -117,12 +117,12 @@ public class Main {
 //            System.out.println(contractAddress);
 
             // Wrapper instance for already deployed contract
-            DocumentRegistry registryContract = DocumentRegistry.load(credentials.getAddress(), web3, creds, new DefaultGasProvider());
+            DocumentRegistry registryContract = DocumentRegistry.load(credentials.getAddress(), web3, creds, gasPrice, gasLimit);
 
             System.out.println(registryContract);
 
             TransactionReceipt receiptDoc = registryContract.notarizeDocument(
-                    "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco".getBytes()).send();
+                    "QmXoypizjW3WknFiJnKLwHCnL72vedxj".getBytes()).send();
 
             String txHash = receiptDoc.getTransactionHash();
             System.out.println(txHash);
