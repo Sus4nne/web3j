@@ -1,0 +1,9 @@
+
+Q
+java:S1133	"5Do not forget to remove this deprecated code someday.(ΐΑÿo8πρωΆ«.
+R
+java:S1133"5Do not forget to remove this deprecated code someday.(–ζΚ8πρωΆ«.
+D
+java:S1123	"(Add the missing @deprecated Javadoc tag.(ΐΑÿo8πρωΆ«.
+E
+java:S1123"(Add the missing @deprecated Javadoc tag.(–ζΚ8πρωΆ«.
