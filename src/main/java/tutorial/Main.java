@@ -122,7 +122,7 @@ public class Main {
             System.out.println(registryContract);
 
             TransactionReceipt receiptDoc = registryContract.notarizeDocument(
-                    "QmXoypizjW3WknFiJnKLwHCnL72vedxj".getBytes()).send();
+                    "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco").send();
 
             String txHash = receiptDoc.getTransactionHash();
             System.out.println(txHash);

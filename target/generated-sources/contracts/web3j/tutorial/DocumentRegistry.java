@@ -13,12 +13,14 @@ import org.web3j.abi.datatypes.Address;
 import org.web3j.abi.datatypes.Bool;
 import org.web3j.abi.datatypes.Event;
 import org.web3j.abi.datatypes.Type;
-import org.web3j.abi.datatypes.generated.Bytes32;
+import org.web3j.abi.datatypes.Utf8String;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameter;
 import org.web3j.protocol.core.RemoteCall;
+import org.web3j.protocol.core.RemoteFunctionCall;
 import org.web3j.protocol.core.methods.request.EthFilter;
+import org.web3j.protocol.core.methods.response.BaseEventResponse;
 import org.web3j.protocol.core.methods.response.Log;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.tx.Contract;
@@ -32,17 +34,18 @@ import org.web3j.tx.gas.ContractGasProvider;
  * or the org.web3j.codegen.SolidityFunctionWrapperGenerator in the 
  * <a href="https://github.com/web3j/web3j/tree/master/codegen">codegen module</a> to update.
  *
- * <p>Generated with web3j version 4.2.0.
+ * <p>Generated with web3j version 4.5.11.
  */
+@SuppressWarnings("rawtypes")
 public class DocumentRegistry extends Contract {
-    private static final String BINARY = "608060405234801561001057600080fd5b50610132806100206000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80634c565d5b146037578063fe6ad6c6146065575b600080fd5b605160048036036020811015604b57600080fd5b5035607f565b604080519115158252519081900360200190f35b605160048036036020811015607957600080fd5b503560e7565b60008181526020818152604080832080546001600160a01b03191633908117825542600183015560029091018590558151858152915190927fa820f77cc16cde8316ee3e311571ae6db0b10f00e3e689f92beedc5329110fb4928290030190a2506001919050565b600081815260208190526040902060020154149056fea265627a7a72315820f3ae023a628b01fc119a18e1432b955b30102fde3bd1b37ea4dad1cf13b6ef2c64736f6c63430005100032";
+    public static final String BINARY = "608060405234801561001057600080fd5b5061033e806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80636a33bf871461003b57806373ca4a5b146100bf575b600080fd5b6100ab6004803603602081101561005157600080fd5b81019060208101813564010000000081111561006c57600080fd5b82018360208201111561007e57600080fd5b803590602001918460018302840111640100000000831117156100a057600080fd5b50909250905061012f565b604080519115158252519081900360200190f35b6100ab600480360360208110156100d557600080fd5b8101906020810181356401000000008111156100f057600080fd5b82018360208201111561010257600080fd5b8035906020019184600183028401116401000000008311171561012457600080fd5b50909250905061020c565b6000808383604051602001808383808284376040805191909301818103601f19018252835280516020918201206000818152918290529290208054336001600160a01b031990911617815542600182015591955061019794505060020191508690508561026e565b50336001600160a01b03167f4208034e4449bb439a4b1ba16ff193bec2c83ec39cd969a629aa475c7f0b8047858560405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a25060019392505050565b6000806001600160a01b03166000808585604051602001808383808284376040805191909301818103601f1901825283528051602091820120875286019690965293909301600020546001600160a01b03169490941415979650505050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102af5782800160ff198235161785556102dc565b828001600101855582156102dc579182015b828111156102dc5782358255916020019190600101906102c1565b506102e89291506102ec565b5090565b61030691905b808211156102e857600081556001016102f2565b9056fea265627a7a72315820cc400ea30954a65d86ff807519dd8e0fa0b207b4083d62f1b36f567561139a9664736f6c63430005100032";
 
     public static final String FUNC_ISNOTARIZED = "isNotarized";
 
     public static final String FUNC_NOTARIZEDOCUMENT = "notarizeDocument";
 
     public static final Event NOTARIZED_EVENT = new Event("Notarized", 
-            Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Bytes32>() {}));
+            Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Utf8String>() {}));
     ;
 
     @Deprecated
@@ -70,7 +73,7 @@ public class DocumentRegistry extends Contract {
             NotarizedEventResponse typedResponse = new NotarizedEventResponse();
             typedResponse.log = eventValues.getLog();
             typedResponse._signer = (String) eventValues.getIndexedValues().get(0).getValue();
-            typedResponse._documentHash = (byte[]) eventValues.getNonIndexedValues().get(0).getValue();
+            typedResponse._documentHash = (String) eventValues.getNonIndexedValues().get(0).getValue();
             responses.add(typedResponse);
         }
         return responses;
@@ -84,7 +87,7 @@ public class DocumentRegistry extends Contract {
                 NotarizedEventResponse typedResponse = new NotarizedEventResponse();
                 typedResponse.log = log;
                 typedResponse._signer = (String) eventValues.getIndexedValues().get(0).getValue();
-                typedResponse._documentHash = (byte[]) eventValues.getNonIndexedValues().get(0).getValue();
+                typedResponse._documentHash = (String) eventValues.getNonIndexedValues().get(0).getValue();
                 return typedResponse;
             }
         });
@@ -96,17 +99,17 @@ public class DocumentRegistry extends Contract {
         return notarizedEventFlowable(filter);
     }
 
-    public RemoteCall<Boolean> isNotarized(byte[] _documentHash) {
+    public RemoteFunctionCall<Boolean> isNotarized(String _documentHash) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISNOTARIZED, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Bytes32(_documentHash)), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(_documentHash)), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
-    public RemoteCall<TransactionReceipt> notarizeDocument(byte[] _documentHash) {
+    public RemoteFunctionCall<TransactionReceipt> notarizeDocument(String _documentHash) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
                 FUNC_NOTARIZEDOCUMENT, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Bytes32(_documentHash)), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(_documentHash)), 
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
@@ -147,11 +150,9 @@ public class DocumentRegistry extends Contract {
         return deployRemoteCall(DocumentRegistry.class, web3j, transactionManager, gasPrice, gasLimit, BINARY, "");
     }
 
-    public static class NotarizedEventResponse {
-        public Log log;
-
+    public static class NotarizedEventResponse extends BaseEventResponse {
         public String _signer;
 
-        public byte[] _documentHash;
+        public String _documentHash;
     }
 }

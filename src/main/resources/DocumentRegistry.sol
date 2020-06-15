@@ -2,47 +2,49 @@ pragma solidity ^0.5.6;
 
 
 /**
-*  @dev Smart Contract responsible to notarize documents on the Ethereum Blockchain
+*  @dev Smart Contract resposible to notarize documents on the Ethereum Blockchain
 */
 contract DocumentRegistry {
 
-  struct Document {
-      address signer; // Notary
-      uint date; // Date of notarization
-      bytes32 hash; // Document Hash
-  }
+    struct Document {
+        address signer; // Notary
+        uint date; // Date of notarization
+        string hash; // Document Hash
+    }
 
-  /**
-   *  @dev Storage space used to record all documents notarized with metadata
-   */
-  mapping(bytes32 => Document) registry;
+    /**
+     *  @dev Storage space used to record all documents notarized with metadata
+     */
+    mapping(bytes32 => Document) registry;
 
-  /**
-   *  @dev Notarize a document identified by its 32 bytes hash by recording the hash, the sender and date in the registry
-   *  @dev Emit an event Notarized in case of success
-   *  @param _documentHash Document hash
-   */
-  function notarizeDocument(bytes32 _documentHash) external returns (bool) {
-    registry[_documentHash].signer = msg.sender;
-    registry[_documentHash].date = now;
-    registry[_documentHash].hash = _documentHash;
+    /**
+     *  @dev Notarize a document identified by the hash of the document hash, the sender and date in the registry
+     *  @dev Emit an event Notarized in case of success
+     *  @param _documentHash Document hash
+     */
+    function notarizeDocument(string calldata _documentHash) external returns (bool) {
+        bytes32 id = keccak256(abi.encodePacked(_documentHash));
 
-    emit Notarized(msg.sender, _documentHash);
+        registry[id].signer = msg.sender;
+        registry[id].date = now;
+        registry[id].hash = _documentHash;
 
-    return true;
-  }
+        emit Notarized(msg.sender, _documentHash);
 
-  /**
-   *  @dev Verify a document identified by its hash was noterized in the registry.
-   *  @param _documentHash Document hash
-   *  @return bool if document was noterized previsouly in the registry
-   */
-  function isNotarized(bytes32 _documentHash) external view returns (bool) {
-    return registry[_documentHash].hash ==  _documentHash;
-  }
+        return true;
+    }
 
-  /**
-   *  @dev Definition of the event triggered when a document is successfully notarized in the registry
-   */
-  event Notarized(address indexed _signer, bytes32 _documentHash);
+    /**
+     *  @dev Verify a document identified by its has was noterized in the registry previsouly.
+     *  @param _documentHash Document hash
+     *  @return bool if document was noterized previsouly in the registry
+     */
+    function isNotarized(string calldata _documentHash) external view returns (bool) {
+        return registry[keccak256(abi.encodePacked(_documentHash))].signer != address(0);
+    }
+
+    /**
+     *  @dev Definition of the event triggered when a document is successfully notarized in the registry
+     */
+    event Notarized(address indexed _signer, string _documentHash);
 }
