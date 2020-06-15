@@ -1,39 +1,57 @@
 
-e
-java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8ú…Éª.
-U	java:S106h"9Replace this use of System.out or System.err by a logger.(•Ñí¦8‹É³Éª.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ÍÉú¥8ºÕúÇª.
-E
-java:S1148o"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8î–ÿÉª.
-W	java:S125E"<This block of commented-out lines of code should be removed.(øş¹8Ğ‹Êª.
+W	java:S125b"<This block of commented-out lines of code should be removed.(‚¶ä=8…ßŠÊª.
+]	java:S125,"<This block of commented-out lines of code should be removed.(ª¼ğĞøÿÿÿÿ8·³“Éª.
+]	java:S125h"<This block of commented-out lines of code should be removed.(¥æ‡Ûùÿÿÿÿ8…ßŠÊª.
+Z	java:S106z"9Replace this use of System.out or System.err by a logger.(×³şøÿÿÿÿ8Á˜â£«.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(× ¥8à’Èª.
 _
-java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8†Éª.
-U	java:S106/"9Replace this use of System.out or System.err by a logger.(× ¥8à’Èª.
-Z	java:S106g"9Replace this use of System.out or System.err by a logger.(ñ÷š¿ıÿÿÿÿ8‹É³Éª.
-W	java:S125]"<This block of commented-out lines of code should be removed.(‚¶ä=8…ßŠÊª.
-X	java:S125Q"<This block of commented-out lines of code should be removed.(üØÁÊ8Ğ‹Êª.
-X	java:S125H"<This block of commented-out lines of code should be removed.(‘çá¦8Ğ‹Êª.
-]	java:S125T"<This block of commented-out lines of code should be removed.(î¤Ëìşÿÿÿÿ8Ğ‹Êª.
-g	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(¡„õßúÿÿÿÿ8æ®¿Çª.
-]	java:S125c"<This block of commented-out lines of code should be removed.(¥æ‡Ûùÿÿÿÿ8…ßŠÊª.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(°®Âãüÿÿÿÿ8ÏúÇª.
-U	java:S1062"9Replace this use of System.out or System.err by a logger.(ôÆÓİ8à’Èª.
-X	java:S125,"<This block of commented-out lines of code should be removed.(ÆÑßç8¶É“Éª.
-g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¤¸÷ùÿÿÿÿ8æ®¿Çª.
+java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8†Éª.
 [
-java:S1854?"9Remove this useless assignment to local variable "nonce".(¯À”Ãùÿÿÿÿ8Ğ‹Êª.
-]	java:S125X"<This block of commented-out lines of code should be removed.( ½¶øúÿÿÿÿ8Ğ‹Êª.
-U	java:S106+"9Replace this use of System.out or System.err by a logger.(Ë˜Ã8™¸ıÇª.
-h
-java:S2142l"FEither re-interrupt this method or rethrow the "InterruptedException".(‡ü«¤ûÿÿÿÿ8ºÊ˜Éª.
-Z	java:S106*"9Replace this use of System.out or System.err by a logger.(Ú§˜¯ÿÿÿÿÿ8™¸ıÇª.
-L
-java:S1481?"*Remove this unused "nonce" local variable.(¯À”Ãùÿÿÿÿ8Ğ‹Êª.
-U	java:S106:"9Replace this use of System.out or System.err by a logger.(•Ñí¦8Ç¡Éª.
-U	java:S1069"9Replace this use of System.out or System.err by a logger.(İ–ìˆ8Ç¡Éª.
-o
-java:S1128"MRemove this unused import 'java.security.InvalidAlgorithmParameterException'.( ¾·şÿÿÿÿ8Çç…Éª.
-]	java:S125'"<This block of commented-out lines of code should be removed.(ª¼ğĞøÿÿÿÿ8·³“Éª.
+java:S1854D"9Remove this useless assignment to local variable "nonce".(¯À”Ãùÿÿÿÿ8Ğ‹Êª.
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(Ú§˜¯ÿÿÿÿÿ8™¸ıÇª.
+U	java:S1060"9Replace this use of System.out or System.err by a logger.(Ë˜Ã8™¸ıÇª.
+U	java:S1067"9Replace this use of System.out or System.err by a logger.(ôÆÓİ8à’Èª.
+O
+java:S1481M"-Remove this unused "gasLimit" local variable.(‚ ¦©ıÿÿÿÿ8·ÄÚ£«.
+U	java:S106?"9Replace this use of System.out or System.err by a logger.(•Ñí¦8Ç¡Éª.
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(°®Âãüÿÿÿÿ8ÏúÇª.
 F
-java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8Ï®ŠÉª.
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8Ï®ŠÉª.
+]	java:S125Y"<This block of commented-out lines of code should be removed.(î¤Ëìşÿÿÿÿ8Ğ‹Êª.
+X	java:S125t"<This block of commented-out lines of code should be removed.(‰Œ˜¶8·ÄÚ£«.
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¤¸÷ùÿÿÿÿ8æ®¿Çª.
+U	java:S106m"9Replace this use of System.out or System.err by a logger.(•Ñí¦8‹É³Éª.
+e
+java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8ú…Éª.
+]	java:S125]"<This block of commented-out lines of code should be removed.( ½¶øúÿÿÿÿ8Ğ‹Êª.
+U	java:S106""9Replace this use of System.out or System.err by a logger.(ÍÉú¥8ºÕúÇª.
+L
+java:S1481D"*Remove this unused "nonce" local variable.(¯À”Ãùÿÿÿÿ8Ğ‹Êª.
+o
+java:S1128"MRemove this unused import 'java.security.InvalidAlgorithmParameterException'.( ¾·şÿÿÿÿ8Çç…Éª.
+O
+java:S1481N"-Remove this unused "gasPrice" local variable.(»§Ğ¥úÿÿÿÿ8·ÄÚ£«.
+X	java:S125r"<This block of commented-out lines of code should be removed.(ôá·8·ÄÚ£«.
+h	java:S112„"FDefine and throw a dedicated exception instead of using a generic one.(¡„õßúÿÿÿÿ8æ®¿Çª.
+^
+java:S1128"ARemove this unused import 'org.web3j.tx.gas.ContractGasProvider'.(µ”üŠ8Å‚£«.
+^
+java:S1854N"<Remove this useless assignment to local variable "gasPrice".(»§Ğ¥úÿÿÿÿ8·ÄÚ£«.
+W	java:S125J"<This block of commented-out lines of code should be removed.(øş¹8Ğ‹Êª.
+^
+java:S1854M"<Remove this useless assignment to local variable "gasLimit".(‚ ¦©ıÿÿÿÿ8·ÄÚ£«.
+^
+java:S1128
+"<Remove this unused import 'org.web3j.tx.TransactionManager'.(‘ôÔ¿üÿÿÿÿ8–ÚË¢«.
+U	java:S106>"9Replace this use of System.out or System.err by a logger.(İ–ìˆ8Ç¡Éª.
+X	java:S125V"<This block of commented-out lines of code should be removed.(üØÁÊ8Ğ‹Êª.
+Z	java:S106l"9Replace this use of System.out or System.err by a logger.(ñ÷š¿ıÿÿÿÿ8‹É³Éª.
+V	java:S106€"9Replace this use of System.out or System.err by a logger.(®øÂò8±ó£«.
+X	java:S1251"<This block of commented-out lines of code should be removed.(ÆÑßç8¶É“Éª.
+i
+java:S2142ƒ"FEither re-interrupt this method or rethrow the "InterruptedException".(‡ü«¤ûÿÿÿÿ8ºÊ˜Éª.
+a
+java:S1128"?Remove this unused import 'org.web3j.protocol.core.RemoteCall'.(“¶Ççüÿÿÿÿ8ÑƒÙ¢«.
+F
+java:S1148†"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8î–ÿÉª.
